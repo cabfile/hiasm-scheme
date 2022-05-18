@@ -12,6 +12,6 @@ async function main() {
 main();
 ```
 ## Usage
-`parse(filename[, prettyPrint])` - parses a scheme (from a file, intended to be in win1251, created using HiAsm) and returns JSON.<br>
+`parse(filename[, prettyPrint])` - parses a scheme (from a file, intended to be in win1251, created using HiAsm) and returns a Promise, that after parsing, returns JSON.<br>
 * `filename` - path to a scheme file to parse<br>
 * `prettyPrint` - whether to pretty print the JSON
