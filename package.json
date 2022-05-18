@@ -1,0 +1,25 @@
+{
+  "name": "hiasm-scheme",
+  "version": "1.0.0",
+  "description": "Parser for HiAsm's .sha files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabfile/hiasm-scheme.git"
+  },
+  "keywords": [
+    "hiasm"
+  ],
+  "author": "cabfile",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cabfile/hiasm-scheme/issues"
+  },
+  "homepage": "https://github.com/cabfile/hiasm-scheme#readme",
+  "dependencies": {
+    "iconv-lite": "^0.6.3"
+  }
+}
