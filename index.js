@@ -44,23 +44,25 @@ exports.parse = async function(schm, prettyPrint) {
 					points: [],
 					links: []
 				}
-			} else throw new TypeError("No match found for line #"+index+". Make sure you didnt edit the file with an external editor.");
+			} else throw new TypeError("Line starts with Add, yet no match found for line #"+index+".");
 		} else if(line == '}') {
-			if(lines[index+1]) {
-				if(lines[index+1].trimStart() == 'BEGIN_SDK') {
-					containerelem.push(curelem);
-					containerelem[containerelem.length-1].elements = [];
-				} else if(containerelem.length > 0) {
-					containerelem[containerelem.length-1].elements.push(curelem);
-					curelem = null;
+			if(curelem != null)  {
+				if(lines[index+1]) {
+					if(lines[index+1].trimStart() == 'BEGIN_SDK') {
+						containerelem.push(curelem);
+						containerelem[containerelem.length-1].elements = [];
+					} else if(containerelem.length > 0) {
+						containerelem[containerelem.length-1].elements.push(curelem);
+						curelem = null;
+					} else {
+						scheme.elements.push(curelem);
+						curelem = null;
+					}
 				} else {
 					scheme.elements.push(curelem);
 					curelem = null;
 				}
-			} else {
-				scheme.elements.push(curelem);
-				curelem = null;
-			}
+			} else throw new TypeError('Found "}" on line #'+index+', but no element is being processed.');
 		} else if(line == 'END_SDK') {
 			if(containerelem.length == 1) {
 				scheme.elements.push(containerelem[0]);
