@@ -30,7 +30,7 @@ Add(FileTools,3481011,322,126)
 }
 ```
 (this scheme is almost 4 years old btw (and is also made by me for whatever reason)) and is in Windows-1251, the output will be:
-```
+```json
 {
   "pack": "delphi",
   "hiasmVersion": "4.05 build 186",
