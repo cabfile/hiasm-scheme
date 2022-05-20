@@ -93,14 +93,5 @@ exports.parse = async function(schm, prettyPrint) {
 			}
 		}
 	});
-	/*for(let i = 0; i < elems.length; i++) {
-		scheme.elements.push({
-			name: elems[i][1],
-			id: elems[i][2],
-			x: elems[i][3],
-			y: elems[i][4],
-			props: elems[i][5]
-		});
-	}*/
 	return JSON.stringify(scheme,null,prettyPrint?'  ':null);
 };
